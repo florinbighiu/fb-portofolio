@@ -24,12 +24,12 @@ export default function Project({ title, description, tags, imageUrl }: ProjectP
         opacity: opacityProgess,
       }}
       className="flex flex-col items-center mb-8 last:mb-0">
-      <div className="bg-gray-100 dark:bg-transparent border dark:border-gray-200/10 border-gray-900/10 rounded-lg min-h-[30rem]">
+      <div className="bg-gray-100 dark:bg-transparent border dark:border-gray-200/10 border-gray-900/10 rounded-lg min-h-[33rem]">
         <div className="w-full px-6 pt-6">
           <Image
             src={imageUrl}
             alt="Project image"
-            className="rounded-lg border border-gray-700/10 hover:scale-105 transition-all"
+            className="rounded-lg h-[15rem] object-fit border border-gray-700/10 hover:scale-105 transition-all"
           />
         </div>
         <section className="p-6 transition dark:text-white ">

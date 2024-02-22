@@ -1,5 +1,6 @@
-import React from "react";
-import ecommergeImg from "@/public/Screenshot 2024-02-16 190004.png";
+import ecommergeImg from "@/public/EcomX.png";
+import starWarsImg from "@/public/starWars.png"
+import employeesImg from "@/public/employeeMadness.png"
 
 export const links = [
   {
@@ -33,18 +34,18 @@ export const projectsData = [
     imageUrl: ecommergeImg,
   },
   {
-    title: "rmtDev",
+    title: "SWAPI MERN project",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: ecommergeImg,
+      "A dynamic web application using the MERN stack. This project's primary goal was to create an interactive platform that seamlessly integrates with the SWAPI (Star Wars API) to provide users with valuable and entertaining information related to the Star Wars universe.",
+    tags: ["React", "JavaScript", "MongoDB", "Express", "Node.js"],
+    imageUrl: starWarsImg,
   },
   {
-    title: "Word Analytics",
+    title: "Employees Madness",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: ecommergeImg,
+      "Employee Management System using the MERN stack. It provided a robust platform for HR professionals and administrators to efficiently oversee employee information.",
+    tags: ["React", "JavaScript", "MongoDB", "Express", "Node.js"],
+    imageUrl: employeesImg,
   },
 ] as const;
 
