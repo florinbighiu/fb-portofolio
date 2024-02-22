@@ -1,4 +1,5 @@
 import React from "react";
+import ecommergeImg from "@/public/Screenshot 2024-02-16 190004.png";
 
 export const links = [
   {
@@ -25,22 +26,25 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "EcomX",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "E-commerce platform, written in React and Spring Boot to provide a seamless and user-friendly experience.",
+    tags: ["React", "Java", "Spring", "Tailwind", "PostgreSQL"],
+    imageUrl: ecommergeImg,
   },
   {
     title: "rmtDev",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+    imageUrl: ecommergeImg,
   },
   {
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    imageUrl: ecommergeImg,
   },
 ] as const;
 

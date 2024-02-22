@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 import { projectsData } from "@/lib/data";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type ProjectProps = (typeof projectsData)[number];
 
-export default function Project({ title, description, tags }: ProjectProps) {
+export default function Project({ title, description, tags, imageUrl }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -22,22 +23,29 @@ export default function Project({ title, description, tags }: ProjectProps) {
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className="flex flex-row mb-3 sm:mb-8 last:mb-0">
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-5 sm:pr-2 sm:pt-5 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">{description}</p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+      className="flex flex-col items-center mb-8 last:mb-0">
+      <div className="bg-gray-100 dark:bg-transparent border dark:border-gray-200/10 border-gray-900/10 rounded-lg min-h-[30rem]">
+        <div className="w-full px-6 pt-6">
+          <Image
+            src={imageUrl}
+            alt="Project image"
+            className="rounded-lg border border-gray-700/10 hover:scale-105 transition-all"
+          />
+        </div>
+        <section className="p-6 transition dark:text-white ">
+          <h3 className="text-2xl text-center font-semibold mb-4">{title}</h3>
+          <p className="text-gray-700 dark:text-white/70 mb-4">{description}</p>
+          <div className="flex flex-wrap gap-2">
             {tags.map((tag, index) => (
-              <li
+              <span
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
                 key={index}>
                 {tag}
-              </li>
+              </span>
             ))}
-          </ul>
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
     </motion.div>
   );
 }
